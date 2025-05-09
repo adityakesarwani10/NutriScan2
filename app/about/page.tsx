@@ -14,7 +14,7 @@ export default function AboutPage() {
         </div>
 
         <div className="relative h-64 md:h-80 w-full rounded-xl overflow-hidden my-8">
-          <Image src="/placeholder.svg?height=400&width=1200" alt="NutriScan Team" fill className="object-cover" />
+          <Image src="/About.jpg" alt="NutriScan Team" fill className="object-cover" />
         </div>
 
         <div className="prose prose-blue max-w-none">

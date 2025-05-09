@@ -28,7 +28,7 @@ export default function ServicesPage() {
                 <Card key={index} className="overflow-hidden">
                   <div className="relative h-48 w-full">
                     <Image
-                      src={`/placeholder.svg?height=200&width=400&text=${encodeURIComponent(service.title)}`}
+                      src={`${service.src}`}
                       alt={service.title}
                       fill
                       className="object-cover"
@@ -57,7 +57,7 @@ export default function ServicesPage() {
                 <Card key={index} className="overflow-hidden">
                   <div className="relative h-48 w-full">
                     <Image
-                      src={`/placeholder.svg?height=200&width=400&text=${encodeURIComponent(service.title)}`}
+                      src={`${service.src}`}
                       alt={service.title}
                       fill
                       className="object-cover"
@@ -132,24 +132,28 @@ const individualServices = [
     title: "Barcode Scanner",
     description: "Scan product barcodes to get instant nutrition information and ingredient details.",
     icon: Scan,
+    src: "/service1.jpg",
     link: "/scanner",
   },
   {
     title: "Product Search",
     description: "Search our extensive database for nutrition information on thousands of food products.",
     icon: Search,
+    src: "/Service2.jpg",
     link: "/search",
   },
   {
     title: "Personalized Recommendations",
     description: "Get food recommendations based on your dietary preferences and nutritional goals.",
     icon: Lightbulb,
+    src: "/Service3.jpg",
     link: "/recommendations",
   },
   {
     title: "Allergen Alerts",
     description: "Set up alerts for ingredients you want to avoid due to allergies or dietary restrictions.",
     icon: ShieldCheck,
+    src: "/Service4.jpg",
     link: "/allergens",
   },
 ]
@@ -157,27 +161,17 @@ const individualServices = [
 const businessServices = [
   {
     title: "Restaurant Menu Analysis",
+    src: "/Servicep1.jpg",
     description: "Get detailed nutrition analysis for your restaurant menu items.",
     icon: Utensils,
     link: "/business/restaurants",
   },
   {
     title: "Food Product Analytics",
+    src: "/Servicep2.jpg",
     description: "Comprehensive analytics on consumer preferences and nutrition trends.",
     icon: BarChart,
     link: "/business/analytics",
-  },
-  {
-    title: "API Integration",
-    description: "Integrate NutriScan's powerful nutrition database into your own applications.",
-    icon: Smartphone,
-    link: "/business/api",
-  },
-  {
-    title: "Corporate Wellness Programs",
-    description: "Promote healthy eating habits among your employees with our corporate solutions.",
-    icon: Users,
-    link: "/business/wellness",
   },
 ]
 

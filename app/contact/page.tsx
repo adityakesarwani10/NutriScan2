@@ -200,17 +200,17 @@ export default function ContactPage() {
 const contactInfo = [
   {
     title: "Email",
-    value: "contact@nutriscan.com",
+    value: "adityakesarwani073@gmail.com",
     icon: Mail,
   },
   {
     title: "Phone",
-    value: "+1 (555) 123-4567",
+    value: "+91 91400 40247",
     icon: Phone,
   },
   {
     title: "Address",
-    value: "123 Nutrition St, Health City, HC 12345",
+    value: "Prayagraj,Uttar Pradesh, India",
     icon: MapPin,
   },
 ]

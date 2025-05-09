@@ -48,7 +48,7 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="container flex items-center justify-center min-h-[calc(100vh-4rem)] py-8">
+    <div className="container pl-20 flex items-center justify-center min-h-[calc(100vh-4rem)] py-8">
       <div className="grid w-full gap-8 md:grid-cols-2 lg:gap-12 items-center max-w-5xl">
         <div className="flex flex-col space-y-4">
           <div className="space-y-2">

@@ -17,6 +17,34 @@ type Message = {
   timestamp: Date
 }
 
+async function generateResponse(input: string): Promise<string> {
+  try {
+    const response = await fetch("https://ai-v050.onrender.com/receive", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ userInput: input }),
+    });
+
+    const data = await response.json();
+
+    if (data.response) { 
+      let formattedText = data.response
+        .replace(/\n/g, "<br>") 
+        .replace(/([A-Z][a-z]+):/g, "<strong>$1:</strong>")
+        .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+        .replace(/\*(.*?)\*/g, "<em>$1</em>")
+        .replace(/gemini/gi, "Aditya")
+        .replace(/google/gi, "Aditya");
+
+      return formattedText;
+    } else {
+      return "No response received.";
+    }
+  } catch (error) {
+    return "Check your Internet Connectivity.";
+  }
+}
+
 export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false)
   const [input, setInput] = useState("")
@@ -47,26 +75,18 @@ export default function Chatbot() {
     setInput("")
     setIsLoading(true)
 
-    // Simulate AI response
-    setTimeout(() => {
-      const responses = [
-        "Based on nutritional guidelines, it's recommended to consume a variety of fruits and vegetables daily.",
-        "Protein is an essential macronutrient that helps build and repair tissues in your body.",
-        "Drinking enough water is crucial for maintaining proper bodily functions and staying hydrated.",
-        "Whole grains provide more nutrients and fiber compared to refined grains.",
-        "Limiting added sugars in your diet can help reduce the risk of various health issues.",
-      ]
+    // Generate AI response
+    const response = await generateResponse(input);
 
-      const botMessage: Message = {
-        id: Date.now().toString(),
-        content: responses[Math.floor(Math.random() * responses.length)],
-        role: "assistant",
-        timestamp: new Date(),
-      }
+    const botMessage: Message = {
+      id: Date.now().toString(),
+      content: response,
+      role: "assistant",
+      timestamp: new Date(),
+    }
 
-      setMessages((prev) => [...prev, botMessage])
-      setIsLoading(false)
-    }, 1000)
+    setMessages((prev) => [...prev, botMessage])
+    setIsLoading(false)
   }
 
   return (
@@ -104,7 +124,7 @@ export default function Chatbot() {
                     message.role === "user" ? "ml-auto bg-primary text-primary-foreground" : "bg-muted",
                   )}
                 >
-                  <p className="text-sm">{message.content}</p>
+                  <p className="text-sm" dangerouslySetInnerHTML={{ __html: message.content }}></p>
                   <span className="text-xs opacity-70 mt-1">
                     {message.timestamp.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
                   </span>

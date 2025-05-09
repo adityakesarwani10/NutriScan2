@@ -3,12 +3,12 @@ import Image from "next/image"
 import { ArrowRight, Scan, ShieldCheck, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-
+// image
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-background to-background/80">
+      <section className="w-full py-8 md:py-24 pl-20 lg:py-32 bg-gradient-to-b from-background to-background/80">
         <div className="container px-4 md:px-6">
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
             <div className="flex flex-col justify-center space-y-4">
@@ -37,7 +37,7 @@ export default function Home() {
             <div className="flex justify-center lg:justify-end">
               <div className="relative h-[350px] w-[350px] md:h-[400px] md:w-[400px] lg:h-[500px] lg:w-[500px]">
                 <Image
-                  src="/placeholder.svg?height=500&width=500"
+                  src="/Hero1.jpg"
                   alt="NutriScan App"
                   fill
                   className="object-contain"
@@ -50,7 +50,7 @@ export default function Home() {
       </section>
 
       {/* Feature Highlight */}
-      <section className="w-full py-12 md:py-24 bg-muted/50">
+      <section className="w-full py-12 pl-20 md:py-24 bg-muted/50">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary">
@@ -84,7 +84,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="w-full py-12 md:py-24" id="about">
+      <section className="w-full py-12 pl-20 md:py-24" id="about">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">About Us</h2>
@@ -98,7 +98,7 @@ export default function Home() {
           <div className="mt-12 grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
             <div className="flex justify-center">
               <div className="relative h-[300px] w-full rounded-xl overflow-hidden">
-                <Image src="/placeholder.svg?height=300&width=500" alt="NutriScan Team" fill className="object-cover" />
+                <Image src="/Mission.jpg" alt="NutriScan Team" fill className="object-cover" />
               </div>
             </div>
             <div className="space-y-4">
@@ -121,7 +121,7 @@ export default function Home() {
       {/* CTA Section */}
       <section className="w-full py-12 md:py-24 bg-primary text-primary-foreground">
         <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
+          <div className="flex flex-col items-center pl-20 justify-center space-y-4 text-center">
             <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Ready to make healthier food choices?</h2>
             <p className="max-w-[700px] md:text-xl">
               Join NutriScan today and start your journey towards a healthier lifestyle.
