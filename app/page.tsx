@@ -10,7 +10,7 @@ export default function Home() {
       {/* Hero Section */}
         <section
   className="relative w-full py-8 md:py-24 pl-20 lg:py-32 bg-cover bg-center bg-no-repeat"
-  style={{ backgroundImage: "url('/bg.png')" }}
+  style={{ backgroundImage: "url('/Bg.png')" }}
 >
   {/* Gradient overlay from transparent top to white bottom */}
   <div
